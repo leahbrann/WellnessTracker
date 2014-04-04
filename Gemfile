@@ -46,3 +46,9 @@ end
 gem 'rails_admin'
 
 gem 'devise'
+
+gem 'bootstrap-sass'
+
+gem 'simple_form'
+
+#gem 'bootstrap-datepicker-rails'
