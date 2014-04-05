@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :activity_records
+
+  def score
+  	self.activity_records.collect {|x| x.activity.points}.reduce(:+)
+  end
+
+
 end

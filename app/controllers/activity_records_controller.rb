@@ -26,6 +26,8 @@ class ActivityRecordsController < ApplicationController
 
 	end
 
+	
+
 
 private
 
