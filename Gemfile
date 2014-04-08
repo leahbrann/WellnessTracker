@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.3'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -54,3 +54,18 @@ gem 'simple_form'
 gem 'bootstrap-datepicker-rails'
 
 gem "chartkick"
+
+group :development, :test do
+	gem 'rspec-rails', '~> 2.0'
+	gem 'factory_girl_rails'
+	gem 'database_cleaner'
+end
+
+group :test do
+	gem 'capybara', '~> 2.1.0'
+	gem 'shoulda-matchers'
+end
+
+#group :development do
+#	gem 'rails-dev-tweaks', '~> 1.1'
+#end
