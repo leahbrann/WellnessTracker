@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ITSwellness::Application.load_tasks
+WellnessTracker::Application.load_tasks

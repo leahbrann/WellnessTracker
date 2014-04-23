@@ -1,11 +1,13 @@
-All Activities
-
+<h1>My Activities</h1>
+<% if @activity_records.count > 0 %>
 <% @activity_records.each do |record| %>
 <p>
 <%= record.date %>
 <%= record.activity.title %>
-<%= record.user.namefirst %>
 </p>
+<% end %>
+<% else %>
+<p>No Activities Found</p>
 <% end %>
 
 <%= link_to "Log an activity", new_activity_record_path %>

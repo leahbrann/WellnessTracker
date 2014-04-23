@@ -22,7 +22,7 @@ describe "Creating an activity record" do
 	create_user
 	create_activity_record
 
-	expect(page).to have_content("All Activities")
+	expect(page).to have_content("My Activities")
 	end
 
 end

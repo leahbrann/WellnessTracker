@@ -44,16 +44,22 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include Capybara::DSL
+  config.include Devise::TestHelpers, :type => :controller
 
 end
 
 def create_user
+    @user = FactoryGirl.build(:user)
     visit root_url
     click_link "Sign Up!"
-    fill_in "user[namefirst]", with: "TestFirst"
-    fill_in "user[namelast]", with: "TestLast"
-    fill_in "user[email]", with: "TestFirst@test.com"
-    fill_in "user[password]", with: "testtest"
-    fill_in "user[password_confirmation]", with: "testtest"
+    fill_in "user[namefirst]", with: @user.namefirst
+    fill_in "user[namelast]", with: @user.namelast
+    fill_in "user[email]", with: @user.email
+    fill_in "user[password]", with: @user.password
+    fill_in "user[password_confirmation]", with: @user.password_confirmation
     click_button "Sign up"    
+  end
+
+  def populate_records
+    FactoryGirl.create_list(:activity_record, 10)
   end
