@@ -1,7 +1,7 @@
 class ActivityRecordsController < ApplicationController
 
 	def index
-		@activity_records = current_user.activity_records
+		@activity_records = current_user.activity_records.sort_by{|record|record.date}.reverse
 	end
 
 	def new
