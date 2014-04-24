@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use Postgresql as the database for Active Record
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -59,6 +59,7 @@ group :development, :test do
 	gem 'rspec-rails', '~> 2.0'
 	gem 'factory_girl_rails'
 	gem 'database_cleaner'
+	gem 'tzinfo-data', platforms: [:x64_mingw,:mingw, :mswin]
 end
 
 group :test do
@@ -70,4 +71,6 @@ end
 #	gem 'rails-dev-tweaks', '~> 1.1'
 #end
 
-gem 'tzinfo-data', platforms: [:x64_mingw,:mingw, :mswin]
+
+
+gem 'rails_12factor', group: :production
