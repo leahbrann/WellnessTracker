@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :activity_records
 
+  validates :namefirst, :namelast, presence: :true
+
   def score
   	self.activity_records.collect {|x| x.activity.points}.reduce(:+)
   end
