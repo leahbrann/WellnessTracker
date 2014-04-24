@@ -1,14 +1,2 @@
 <h1>Log an activity</h1>
-
-<%= simple_form_for @activity_record, :html => {:class => 'form-horizontal'}  do |f|%>
-	<%= f.input :activity_id, collection: @categories, as: :grouped_select, group_method: :activities %>
-	<%= f.text_field :date, :id => "datepicker", :value => Date.today %>
-	<%= f.submit 'Log Activity', {:class => "btn btn-primary"} %>
-
-<% end %>
-
-
-
-<script>
-$('#datepicker').datepicker({format: 'yyyy-mm-dd', todayHighlight: true});
-</script>
+<%= render "form" %>
