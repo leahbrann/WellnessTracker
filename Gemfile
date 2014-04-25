@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 
-# Use Postgresql as the database for Active Record
-gem 'pg'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -60,6 +57,8 @@ group :development, :test do
 	gem 'factory_girl_rails'
 	gem 'database_cleaner'
 	gem 'tzinfo-data', platforms: [:x64_mingw,:mingw, :mswin]
+	# Use Sqlite3 as the database for Active Record
+	gem 'sqlite3'
 end
 
 group :test do
@@ -67,10 +66,8 @@ group :test do
 	gem 'shoulda-matchers'
 end
 
-#group :development do
-#	gem 'rails-dev-tweaks', '~> 1.1'
-#end
-
-
-
-gem 'rails_12factor', group: :production
+group :production do
+	gem 'rails_12factor'
+	# Use Postgresql as the database for Active Record
+	gem 'pg'
+end

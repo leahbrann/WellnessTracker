@@ -1,19 +1,15 @@
 
 development:
-  adapter: postgresql 
-  database: wellness_dev
+  adapter: sqlite3 
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
-  host: localhost
-  port: 5433
 
 test:
-  adapter: postgresql 
-  database: wellness_test
+  adapter: sqlite3 
+  database: db/test.sqlite3
   pool: 5
   timeout: 5000
-  host: localhost
-  port: 5433
 
 production:
   adapter: postgresql 
