@@ -47,7 +47,7 @@ class ActivityRecordsController < ApplicationController
 private
 
 	def activity_record_params
-		params.require(:activity_record).permit(:date, :user_id, :activity_id)
+		params.require(:activity_record).permit(:activity_log_id, :activity_id)
 	end
 
 end

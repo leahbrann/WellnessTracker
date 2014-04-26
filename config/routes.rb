@@ -6,6 +6,8 @@ WellnessTracker::Application.routes.draw do
 
   resources :activity_records
 
+  resources :activity_logs
+
   get '/scores' => 'pages#scores'
 
   # The priority is based upon order of creation: first created -> highest priority.
