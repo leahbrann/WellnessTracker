@@ -1,5 +1,16 @@
-<%= @activity_log.date %>
+<h1>Log Detail</h1>
+<p><b>Date: </b><%= @activity_log.date %></p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Activity</th>
+			<th>Points</th>
+		</tr>
+	</thead>
 <% @activity_log.activity_records.each do |record| %>
-<%= record.activity.title %>
-<%= record.activity.points %>
+<tr>
+<td><%= record.activity.title %></td>
+<td><%= record.activity.points %></td>
+</tr>
 <% end %>
+</table>

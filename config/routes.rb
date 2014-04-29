@@ -4,10 +4,12 @@ WellnessTracker::Application.routes.draw do
 
   root :to => "pages#index"
 
-  resources :activity_records
-
-  resources :activity_logs
-
+  resources :activity_logs do
+    member do
+      get 'copy'
+    end
+  end
+  
   get '/scores' => 'pages#scores'
 
   # The priority is based upon order of creation: first created -> highest priority.

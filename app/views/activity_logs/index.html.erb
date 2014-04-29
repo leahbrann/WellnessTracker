@@ -12,10 +12,13 @@
 <td><%= log.date %></td>
 <td><%= log.points %></td>
 <td><%= link_to "Show", activity_log_path(log.id) %>
+<td><%= link_to 'Edit', edit_activity_log_path(log.id) %></td>
+<td><%= link_to 'Copy to today', copy_activity_log_path(log.id) %></td>
+<td><%= link_to 'Delete', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
 </table>
 <% else %>
-<p>No Activities Found</p>
+<p>No Logs Found</p>
 <% end %>
 
 <%= button_to "Log a new day", new_activity_log_path, {:method => "get", :class => "btn btn-primary"} %>
