@@ -1,0 +1,21 @@
+<h1>My Logs</h1>
+<% if @activity_logs.count > 0 %>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Points</th>
+		</tr>
+	</thead>
+<% @activity_logs.each do |log| %>
+<tr>
+<td><%= log.date %></td>
+<td><%= log.points %></td>
+<td><%= link_to "Show", activity_log_path(log.id) %>
+<% end %>
+</table>
+<% else %>
+<p>No Activities Found</p>
+<% end %>
+
+<%= button_to "Log a new day", new_activity_log_path, {:method => "get", :class => "btn btn-primary"} %>

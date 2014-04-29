@@ -1,0 +1,12 @@
+<%= simple_form_for(@activity_log) do |f| %>
+<%= f.text_field :date, :id => "datepicker", :value => Date.today %>
+	<% @categories.each do |category| %>
+	<%= f.association :activities, collection: @activities.select{|a| a.category_id == category.id}, label: "#{category.title}" %>
+	<% end %>
+
+<%= f.submit 'Log Activity', {:class => "btn btn-primary"} %>
+<% end %>
+
+<script>
+$('#datepicker').datepicker({format: 'yyyy-mm-dd', todayHighlight: true});
+</script>

@@ -1,0 +1,5 @@
+<%= @activity_log.date %>
+<% @activity_log.activity_records.each do |record| %>
+<%= record.activity.title %>
+<%= record.activity.points %>
+<% end %>

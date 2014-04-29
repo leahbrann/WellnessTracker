@@ -59,6 +59,7 @@ group :development, :test do
 	gem 'tzinfo-data', platforms: [:x64_mingw,:mingw, :mswin]
 	# Use Sqlite3 as the database for Active Record
 	gem 'sqlite3'
+	gem 'pry'
 end
 
 group :test do
