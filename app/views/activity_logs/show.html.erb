@@ -1,16 +1,19 @@
 <h1>Log Detail</h1>
 <p><b>Date: </b><%= @activity_log.date %></p>
-<table class="table">
+<table class="table table-condensed">
 	<thead>
 		<tr>
 			<th>Activity</th>
 			<th>Points</th>
 		</tr>
 	</thead>
+<tbody>
 <% @activity_log.activity_records.each do |record| %>
 <tr>
 <td><%= record.activity.title %></td>
 <td><%= record.activity.points %></td>
 </tr>
 <% end %>
+</tbody>
 </table>
+<%= button_to "Edit log", edit_activity_log_path, {:method => "get", :class => "btn btn-primary"} %>

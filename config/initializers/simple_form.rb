@@ -140,6 +140,6 @@ SimpleForm.setup do |config|
   # Cache SimpleForm inputs discovery
   # config.cache_discovery = !Rails.env.development?
 
-  # Default class for inputs
-  # config.input_class = nil
+  # Default class for inputs: changed for Bootstrap forms
+   config.input_class = "form-control"
 end

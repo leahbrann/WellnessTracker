@@ -48,7 +48,7 @@ gem 'bootstrap-sass'
 
 gem 'simple_form'
 
-gem 'bootstrap-datepicker-rails'
+#gem 'bootstrap-datepicker-rails'
 
 gem "chartkick"
 
