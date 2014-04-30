@@ -1,7 +1,7 @@
 <%= simple_form_for(@activity_log) do |f| %>
 <%= f.input :date, :value => Date.today %>
 	<% @categories.each do |category| %>
-	<%= f.association :activities, collection: @activities.select{|a| a.category_id == category.id}, label: "#{category.title}"%>
+	<%= f.association :activities, collection: @activities.select{|a| a.category_id == category.id}, label: "#{category.title}", :input_html => {"multiple" => "multiple"}%>
 	<% end %>
 
 <%= f.submit 'Save Log', {:class => "btn btn-primary"} %>
