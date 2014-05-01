@@ -5,7 +5,7 @@ class ActivityLog < ActiveRecord::Base
 	accepts_nested_attributes_for :activity_records
 	validates :date, presence: :true
 	validates :date, uniqueness: { scope: :user_id,
-    message: "Only one log per day" }
+    message: "must be unique" }
 
 	def points
 		self.activity_records.collect {|x| x.activity.points}.reduce(:+)

@@ -23,8 +23,9 @@ def create
 		@activity_log.activity_records.new("activity_id" => activity)}
 		if @activity_log.save
 			redirect_to activity_logs_path
-		else flash.now[:alert] = "Could not save"
+		else flash.now[:alert] = @activity_log.errors.full_messages
 		render "new"
+		#binding.pry
 		end
 end
 
@@ -62,22 +63,10 @@ def update
 end
 
 def copy
-	@activity_log = ActivityLog.new
-	@activity_log.user = current_user
-	@activity_log.date = Date.today
-	if @activity_log.save	
-		orig_activity_log = ActivityLog.find(params[:id])
-		orig_activity_log.activities.ids.each {|activityid| @activity_log.activity_records.create("activity_id" => activityid)}
-		@activities = Activity.order(title: :asc)
-		@categories = Category.order(title: :asc)
-	
-		redirect_to activity_logs_path
-	else flash[:alert] = "Could not copy: a log for today already exists"
-		redirect_to activity_logs_path
-	end	
+	@activity_log = ActivityLog.find(params[:id])
+	@activities = Activity.order(title: :asc)
+	@categories = Category.order(title: :asc)
 end
-
-
 
 	private
 

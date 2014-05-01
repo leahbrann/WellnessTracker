@@ -7,6 +7,7 @@ WellnessTracker::Application.routes.draw do
   resources :activity_logs do
     member do
       get 'copy'
+      post 'create_copy'
     end
   end
   

@@ -1,0 +1,10 @@
+<h1>Copy Log</h1>
+<%= simple_form_for @activity_log, :url => {:action => "create"},:method => :POST do |f| %>
+<%= f.input :date, :value => Date.today %>
+	<% @categories.each do |category| %>
+	<%= f.association :activities, collection: @activities.select{|a| a.category_id == category.id}, label: "#{category.title}", :input_html => {"multiple" => "multiple"}%>
+	<% end %>
+
+<%= f.submit 'Save Log', {:class => "btn btn-primary"} %>
+
+<% end %>

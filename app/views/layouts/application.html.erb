@@ -15,10 +15,14 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
  <% unless notice.nil? %>
- <p class="alert alert-info"><%= notice %></p>
+ <% notice.each do |message| %>
+ <p class="alert alert-info"><%= message %></p>
+ <% end %>
  <% end %>
  <%unless alert.nil? %>
- <p class="alert alert-danger"><%= alert %></p>
+ <% alert.each do |message| %>
+ <p class="alert alert-danger"><%= message %></p>
+ <% end %>
  <% end %>
 
 <div class="navbar navbar-default navbar-fixed-top">
