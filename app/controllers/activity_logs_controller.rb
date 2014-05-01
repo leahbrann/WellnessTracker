@@ -25,7 +25,6 @@ def create
 			redirect_to activity_logs_path
 		else flash.now[:alert] = @activity_log.errors.full_messages
 		render "new"
-		#binding.pry
 		end
 end
 
