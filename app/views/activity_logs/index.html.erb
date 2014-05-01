@@ -1,5 +1,8 @@
 <h1>My Logs</h1>
+<div class = "row">
+      <div class = "col-md-4 col-lg-9">
 <% if @activity_logs.count > 0 %>
+<span>
 <table class="table table-condense table-hover">
 	<thead>
 		<tr>
@@ -11,23 +14,27 @@
 <tr>
 <td><%= log.date %></td>
 <td><%= log.points %></td>
-<td><%= link_to activity_log_path(log.id), class: "btn btn-default btn-lg" do %>
+<td><%= link_to activity_log_path(log.id), class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-list"> Show</i>
 	<% end %></td>
-<td><%= link_to edit_activity_log_path(log.id), class: "btn btn-default btn-lg" do %>
+<td><%= link_to edit_activity_log_path(log.id), class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-pencil"> Edit</i>
 	<% end %></td>	
-<td><%= link_to copy_activity_log_path(log.id), class: "btn btn-default btn-lg" do %>
+<td><%= link_to copy_activity_log_path(log.id), class: "btn btn-default" do %>
     <i class="glyphicon glyphicon-share"> Copy</i>
 	<% end %></td>
-<td><%= link_to log, {:method => "delete", :class => "btn btn-default btn-lg", data: { confirm: 'Are you sure?' }} do %>
+<td><%= link_to log, {:method => "delete", :class => "btn btn-default", data: { confirm: 'Are you sure?' }} do %>
     <i class="glyphicon glyphicon-remove"> Delete</i>
 	<% end %></td>
 <% end %>
 </table>
+</span>
 <% else %>
 <p>No Logs Found</p>
 <% end %>
+
+</div>
+    </div>
 
 <%= button_to "Log a new day", new_activity_log_path, {:method => "get", :class => "btn btn-primary"} %>
 
