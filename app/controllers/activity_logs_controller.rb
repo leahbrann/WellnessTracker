@@ -3,7 +3,7 @@ class ActivityLogsController < ApplicationController
 	before_filter :setup_activities_and_categories, :only => [:copy, :edit, :new, :create]
 
 def index
-		@activity_logs = current_user.activity_logs.sort_by{|log|log.date}.reverse
+		@activity_logs = ActivityLog.where(:user => current_user).order(date: :desc).page(params[:page]).per(10)
 end
 
 def new

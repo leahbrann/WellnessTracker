@@ -52,6 +52,8 @@ gem 'simple_form'
 
 gem "chartkick"
 
+gem "kaminari"
+
 group :development, :test do
 	gem 'rspec-rails', '~> 2.0'
 	gem 'factory_girl_rails'
