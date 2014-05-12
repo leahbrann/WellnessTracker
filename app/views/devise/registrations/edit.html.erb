@@ -3,11 +3,11 @@
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :namefirst %><br />
-  <%= f.namefirst_field :namefirst %></div>
+   <div><%= f.label "First Name" %><br />
+  <%= f.text_field :namefirst %></div>
 
-  <div><%= f.label :namelast %><br />
-  <%= f.namelast_field :namelast %></div>
+  <div><%= f.label "Last Name"%><br />
+  <%= f.text_field :namelast %></div>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>

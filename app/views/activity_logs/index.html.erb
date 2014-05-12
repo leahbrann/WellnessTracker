@@ -11,7 +11,7 @@
 	</thead>
 <% @activity_logs.each do |log| %>
 <tr>
-<td><%= log.date.strftime('%b %d') %></td>
+<td><%= log.date.strftime('%m/%d/%Y') %></td>
 <td><%= log.points %></td>
 <td><%= link_to activity_log_path(log.id), class: "btn btn-default btn-sm hidden-xs" do %>
     <i class="glyphicon glyphicon-list"> Show</i>
