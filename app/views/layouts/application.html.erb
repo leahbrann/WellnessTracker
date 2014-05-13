@@ -18,9 +18,7 @@
  <p class="alert alert-info"><%= notice %></p>
  <% end %>
  <%unless alert.nil? %>
- <% alert.each do |message| %>
- <p class="alert alert-danger"><%= message %></p>
- <% end %>
+   <p class="alert alert-danger"><%= alert %></p>
  <% end %>
 
 <div class="navbar navbar-default navbar-fixed-top">

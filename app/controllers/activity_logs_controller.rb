@@ -17,7 +17,7 @@ def create
 	@activity_log.create_records(params[:activity_log][:activity_ids])
 		if @activity_log.save
 			redirect_to activity_logs_path
-		else flash.now[:alert] = @activity_log.errors.full_messages
+		else flash.now[:alert] = @activity_log.errors.full_messages.to_sentence
 		render "new"
 		end
 end
