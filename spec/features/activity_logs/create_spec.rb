@@ -38,7 +38,7 @@ describe "Creating an activity log" do
 	expect(page).to have_content("My Logs")
 	create_activity_log
 
-	expect(page).to have_content("Only one log per day")
+	expect(page).to have_content("Date must be unique")
 
 	end
 
