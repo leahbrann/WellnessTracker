@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
 	def scores
-		@users = User.all
+		@users = User.joins(:activity_logs).uniq
 		@scoreshash = Hash[@users.map{|user| [user.namefirst, user.score]}]
 	end
 
