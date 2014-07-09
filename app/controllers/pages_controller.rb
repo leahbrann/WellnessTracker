@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
 
-	def scores
+	def leaderboard
 		@users = User.joins(:activity_logs).uniq
-		@scoreshash = Hash[@users.map{|user| [user.namefirst, user.score]}]
+		@teams = Team.all
+		@scoreshash = Hash[@users.map{|user| [user.username, user.score]}]
+		@teamscores = Hash[@teams.map{|team| [team.name, team.score]}] 
 	end
 
 	def index

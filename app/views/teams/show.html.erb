@@ -6,7 +6,7 @@
 	<% if @team.captain == "None" %>
 <%= button_to "Become Captain", lead_team_path(@team), {:class => "btn btn-primary"} %>
 	<% end %>
-<%= button_to "Leave Team", leave_team_path(@team), {:class => "btn btn-primary"} %>
+<%= button_to "Leave Team", leave_team_path(@team), {:class => "btn btn-danger"} %>
 <% end %>
 </div>
 <h3>Members</h3>

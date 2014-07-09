@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class = "active"><a href="#individual" role="tab" data-toggle="tab">Individual</a></li>
+  <li><a href="#team" role="tab" data-toggle="tab">Team</a></li>
+</ul>
+
+<div class = "tab-content">
+	<div class = "tab-pane active" id="individual"><%= column_chart @scoreshash %></div>
+	<div class = "tab-pane" id="team"><%= column_chart @teamscores %></div>
+</div>
