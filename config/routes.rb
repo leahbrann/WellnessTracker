@@ -10,6 +10,8 @@ WellnessTracker::Application.routes.draw do
       post 'create_copy'
     end
   end
+
+  resources :teams
   
   get '/scores' => 'pages#scores'
 

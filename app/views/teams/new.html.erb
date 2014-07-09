@@ -1,0 +1,6 @@
+<h1>Create a New Team</h1>
+<p>Enter a team name below. You will be designated as the captain of this team.</p>
+<%= simple_form_for(@team) do |f| %>
+<%= f.input :name %>
+<%= f.submit 'Create Team', {:class => "btn btn-primary"} %>
+<% end %>
