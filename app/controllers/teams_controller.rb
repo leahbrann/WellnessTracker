@@ -5,6 +5,7 @@ class TeamsController < ApplicationController
 
 	def show
 		@team = Team.find(params[:id])
+		@members = @team.users
 	end
 
 	def new
@@ -19,6 +20,43 @@ class TeamsController < ApplicationController
 			redirect_to teams_path
 		else flash.now[:alert] = @team.errors.full_messages.to_sentence
 		render "new"
+		end
+	end
+
+	def join
+		@team = Team.find(params[:id])
+		@members = @team.users
+		membership = @team.team_memberships.new(:user => current_user)
+		if membership.save
+			redirect_to team_path(@team)
+		else
+			flash.now[:alert] = membership.errors.full_messages.to_sentence
+		render "show"
+		end
+	end
+
+	def leave
+		@team = Team.find(params[:id])
+		@members = @team.users
+		membership = @team.team_memberships.find_by(:user => current_user)
+		if membership.destroy
+			redirect_to team_path(@team)
+		else
+			flash.now[:alert] = membership.errors.full_messages.to_sentence
+		render "show"
+		end
+	end
+
+	def lead
+		@team = Team.find(params[:id])
+		@members = @team.users
+		membership = @team.team_memberships.find_by(:user => current_user)
+		membership.captain = true
+		if membership.save
+			redirect_to team_path(@team)
+		else
+			flash.now[:alert] = membership.errors.full_messages.to_sentence
+		render "show"
 		end
 	end
 

@@ -1,0 +1,17 @@
+<h1>Team: <%= @team.name %> </h1>
+<div class = "row">
+<% if current_user.team.nil? %>
+<%= button_to "Join Team", join_team_path(@team), {:class => "btn btn-primary"} %>
+<% elsif current_user.team == @team %>
+	<% if @team.captain == "None" %>
+<%= button_to "Become Captain", lead_team_path(@team), {:class => "btn btn-primary"} %>
+	<% end %>
+<%= button_to "Leave Team", leave_team_path(@team), {:class => "btn btn-primary"} %>
+<% end %>
+</div>
+<h3>Members</h3>
+<ul>
+<% @members.each do |user| %>
+	<li><%= user.username %></li>
+<% end %>
+</ul>

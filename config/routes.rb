@@ -11,7 +11,13 @@ WellnessTracker::Application.routes.draw do
     end
   end
 
-  resources :teams
+  resources :teams do
+    member do
+      post 'join'
+      post 'leave'
+      post 'lead'
+    end
+  end
   
   get '/scores' => 'pages#scores'
 

@@ -1,8 +1,8 @@
 <h1>Teams</h1>
 <p>Join a team and compete as a group against other teams</p>
-<%= link_to "Create a team", new_team_path %>
-<p></p>
-<p>Team Leaderboard</p>
+<% if current_user.team.nil? %>
+<%= button_to "Create a team", new_team_path, {:class => "btn btn-primary", :method => "get"} %>
+<% end %>
 <table class="table table-condense table-hover">
 <thead>
 	<tr>
@@ -12,8 +12,8 @@
 </thead>
 <% @teams.each do |t| %>
 <tr>
-<td><%= t.name %></td>
-<td><%= t.captain.username %></td>
+<td><%= link_to t.name, team_path(t.id) %></td>
+<td><%= t.captain %></td>
 </tr>
 <% end %>
 </table>	
