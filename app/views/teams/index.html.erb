@@ -1,5 +1,5 @@
 <h1>Teams</h1>
-<p>Join a team and compete as a group against other teams</p>
+<p>Join a team and compete as a group!</p>
 <% if current_user.team.nil? %>
 <%= button_to "Create a team", new_team_path, {:class => "btn btn-primary", :method => "get"} %>
 <% end %>

@@ -33,17 +33,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
 gem 'rails_admin'
 
 gem 'devise'
@@ -51,8 +40,6 @@ gem 'devise'
 gem 'bootstrap-sass'
 
 gem 'simple_form'
-
-#gem 'bootstrap-datepicker-rails'
 
 gem "chartkick"
 

@@ -14,16 +14,16 @@
 <td><%= log.date.strftime('%m/%d/%Y') %></td>
 <td><%= log.points %></td>
 <td><%= link_to activity_log_path(log.id), class: "btn btn-default btn-sm hidden-xs" do %>
-    <i class="glyphicon glyphicon-list"> Show</i>
+    <span class="glyphicon glyphicon-list"></span> Show
 	<% end %></td>
 <td><%= link_to edit_activity_log_path(log.id), class: "btn btn-default btn-sm" do %>
-    <i class="glyphicon glyphicon-pencil"> Edit</i>
+    <span class="glyphicon glyphicon-pencil"></span> Edit
 	<% end %></td>	
 <td><%= link_to copy_activity_log_path(log.id), class: "btn btn-default btn-sm" do %>
-    <i class="glyphicon glyphicon-share"> Copy</i>
+    <span class="glyphicon glyphicon-share"></span> Copy
 	<% end %></td>
 <td><%= link_to log, {:method => "delete", :class => "btn btn-default btn-sm hidden-xs", data: { confirm: 'Are you sure?' }} do %>
-    <i class="glyphicon glyphicon-remove"> Delete</i>
+    <span class="glyphicon glyphicon-remove"></span> Delete
 	<% end %></td>
 <% end %>
 </table>
@@ -35,5 +35,5 @@
 </div>
     </div>
 
-<%= button_to "Log a new day", new_activity_log_path, {:method => "get", :class => "btn btn-primary"} %>
+<%= button_to "Log Daily Points", new_activity_log_path, {:method => "get", :class => "btn btn-primary"} %>
 
