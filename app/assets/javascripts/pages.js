@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).on('page:change',function() {
  $('a[href="#team"]').click(function (e) {
   e.preventDefault()
   $('#team').css({opacity:0})
