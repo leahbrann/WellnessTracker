@@ -50,8 +50,9 @@ end
 
 def create_user
     @user = FactoryGirl.build(:user)
-    visit root_url
+    visit "/"
     click_link "Sign Up!"
+    fill_in "user[username]", with: @user.username
     fill_in "user[namefirst]", with: @user.namefirst
     fill_in "user[namelast]", with: @user.namelast
     fill_in "user[email]", with: @user.email
@@ -62,4 +63,25 @@ def create_user
 
   def populate_records
     FactoryGirl.create_list(:activity_record, 10)
+  end
+
+  def setup_activities
+    FactoryGirl.create(:category)
+    FactoryGirl.create(:activity)
+    $paramsactivity ||= 'Physical Chores'
+    $paramsdate1i ||=  "2014"
+    $paramsdate2i ||= "April"
+    $paramsdate3i ||= "14"
+  end
+
+  def create_activity_log(params={})
+  visit "/activity_logs"
+  click_button "Log Daily Points"
+  expect(page).to have_content("New Log")
+
+  select($paramsactivity, :from  => 'activity_log[activity_ids][]')
+  select $paramsdate1i , :from=> "activity_log_date_1i" 
+  select $paramsdate2i , :from=> "activity_log_date_2i"
+  select $paramsdate3i , :from=> "activity_log_date_3i"  
+  click_button "Save Log"
   end
